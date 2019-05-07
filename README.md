@@ -8,6 +8,7 @@ utilisation
 
 - creer un dossier "vault" dans le repertoire ou se trouve le playbook (a fixer)
 puis
+
 `python3 pyvault.py -d chemin/vers/le/dossier -f mon-playbook.yml (ou all)
 `
 ou -d est optionnel (si il n'y a rien il va chercher dans le repertoire ou est lance pyvault)
