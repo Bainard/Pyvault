@@ -1,0 +1,45 @@
+---
+
+- name :                         install server
+  hosts:                         test
+  remote_user:                   root
+
+  vars:
+    user:                        test-vault
+    httpd :                      nginx
+    php_version:                 "7.2"
+    shorewall_default_interface: "ens2"
+    pwd_mariadb:                 bidule
+    pwd_proftpd:                 bidule
+    zabbix_agent_mysql:          true
+
+
+    vhosts:
+      - domaine:                 debilos.lol
+        sousdomaine:             www
+        alias:                   debilos.lol
+        bdd:                     debilos
+        bdd_mdp:                 bidule
+        ftp:                     debilos
+        ftp_mdp:                 bidule
+        path:
+        redirect:
+        ssl:                     false
+        ssl_force:               false
+
+
+  roles:
+     - user
+     - defaults
+     - nginx
+     - php-7
+     - pma
+     - mariadb
+     - proftpd
+     - shorewall
+     - munin
+     - vhost
+     - backupninja
+     - zabbix-agent
+
+...
